@@ -1,0 +1,41 @@
+const fetchWeather = async () => {
+    const url = 'https://yahoo-weather5.p.rapidapi.com/weather?location=london&format=json&u=c';
+const options = {
+	method: 'GET',
+	headers: {
+		'X-RapidAPI-Key': '916cd2a7f4msh05963b54a842cb5p1a113djsn3c09d641f69a',
+		'X-RapidAPI-Host': 'yahoo-weather5.p.rapidapi.com'
+	}
+};
+
+try {
+	const response = await fetch(url, options);
+	const result = await response.json();
+	console.log(result.current_observation);
+} catch (error) {
+	console.error(error);
+}
+}
+fetchWeather()
+
+const options = {
+    enableHighAccuracy: true,
+    timeout: 5000,
+    maximumAge: 0,
+  };
+  
+  function success(pos) {
+    const crd = pos.coords;
+  
+    console.log("Your current position is:");
+    console.log(`Latitude : ${crd.latitude}`);
+    console.log(`Longitude: ${crd.longitude}`);
+    console.log(`More or less ${crd.accuracy} meters.`);
+  }
+  
+  function error(err) {
+    console.warn(`ERROR(${err.code}): ${err.message}`);
+  }
+  
+  navigator.geolocation.getCurrentPosition(success, error, options);
+  

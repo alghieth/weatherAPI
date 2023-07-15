@@ -1,0 +1,30 @@
+.display-flex-center {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.display-flex-between {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+.padd-15 {
+    padding: 15px;
+}
+
+/* margin */
+.m-r-10 {
+    margin-right: 10px;
+}
+.m-b-10 {
+    margin-bottom: 10px;
+}
+.m-b-20 {
+    margin-bottom: 20px;
+}
+.m-t-10 {
+    margin-top: 10px;
+}
+.width-20 {
+    width: 40px;
+}

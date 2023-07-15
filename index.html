@@ -1,0 +1,210 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Weather Forcast App</title>
+    <!-- add css main file link-->
+    <link rel="stylesheet" href="css/main.css">
+    <!-- add framwork.Css file -->
+    <link rel="stylesheet" href="css/framwork.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+</head>
+<body>
+<div class="container">
+    <header>
+        <div class="logo">
+            <i class="fa-solid fa-cloud"></i>
+            <h1>WhateWeather!</h1>
+        </div>
+        <div class="search-input">
+            <i onclick="fetchWeatherApi()" id="searchIcon" class="fa-solid fa-magnifying-glass"></i>
+            <input type="text" id="search-input" placeholder="Search City...">
+        </div>
+        <button class="current-location btn" id="current-position" onclick="currentposition()"><i class="fa-solid fa-location-crosshairs"></i> Current Location</button>
+    </header>
+
+    <!-- forcast section -->
+    <div class="forcast">
+        <!-- now-five-day degry section -->
+        <div class="now-five-day">
+        <div class="now-details">
+            <!-- <div class="now-head">
+                <h3>Now</h3>
+                <div class="degry">
+                    <p>5<span>c</span></p>
+                    <img src="images/04d.png" alt="">
+                </div>
+                <p id="status-text">Broken Clouds</p>
+            </div>
+            <div>
+                <ul>
+                    <li><i id="date" class="fa-solid fa-calendar-days"></i>Wednesday 1, Mar</li>
+                    <li><i id="location" class="fa-solid fa-location-dot"></i>London GB</li>
+                </ul>
+            </div> -->
+        </div>
+        <div class="five-days">
+            <h3>5 Days Forcast</h3>
+            <div class="forcast-5-days">
+            <!-- <ul>
+                <li>
+                    <img src="images/01n.png" alt="">
+                    <p>7</p>
+                    <span>2 Mar</span>
+                    <span>Thursday</span>
+                </li>
+                <li>
+                    <img src="images/01n.png" alt="">
+                    <p>7</p>
+                    <span>2 Mar</span>
+                    <span>Thursday</span>
+                </li>
+                <li>
+                    <img src="images/01n.png" alt="">
+                    <p>7</p>
+                    <span>2 Mar</span>
+                    <span>Thursday</span>
+                </li>
+                <li>
+                    <img src="images/01n.png" alt="">
+                    <p>7</p>
+                    <span>2 Mar</span>
+                    <span>Thursday</span>
+                </li>
+                <li>
+                    <img src="images/01n.png" alt="">
+                    <p>7</p>
+                    <span>2 Mar</span>
+                    <span>Thursday</span>
+                </li>
+            </ul> -->
+        </div>
+        </div>
+        </div>
+
+        <!-- today highlits -->
+        <div class="today-highlit">
+            <h3 class="m-b-20">Today Highlits</h3>
+            <div class="highlits-content">
+                <!-- <div class="padd-15 m-b-20">
+                    <p class="m-b-10">Wind</p>
+                    <div class="display-flex-between m-b-10">
+                        <i class="fa-solid fa-wind fa-2x"></i>
+                        <div class="highlits-item">
+                            <div>
+                                <p>Chill</p>
+                                <span>57</span>
+                            </div>
+                        </div>
+                        <div class="highlits-item">
+                            <div>
+                                <p>Direction</p>
+                                <span>South</span>
+                            </div>
+                        </div>
+                        <div class="highlits-item">
+                            <div>
+                                <p>Speed</p>
+                                <span>2 mph</span>
+                            </div>
+                        </div>
+                    </div>
+
+                </div>
+                <div class="padd-15 m-b-20">
+                    <p class="m-b-10">Atmosphere</p>
+                    <div class="display-flex-between m-b-10">
+                        <img class="width-20" src="images/50d.png" alt="">
+                        <div class="highlits-item">
+                            <div>
+                                <p>Visibilty</p>
+                                <span>10 km</span>
+                            </div>
+                        </div>
+                        <div class="highlits-item">
+                            <div>
+                                <p>pressure</p>
+                                <span>1013.9 hpa</span>
+                            </div>
+                        </div>
+                        <div class="highlits-item">
+                            <div>
+                                <p>Humidity</p>
+                                <span>81 %</span>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    
+                </div>
+                <div class="padd-15">
+                    <p class="m-b-10">Sunrise & Sunset</p>
+                    <div class="display-flex-between m-b-10">
+                        <div class="highlits-item">
+                            <i class="fa-regular fa-sun"></i>
+                            <div>
+                                <p>Sunrise</p>
+                                <span>6:45 AM</span>
+                            </div>
+                        </div>
+                        <div class="highlits-item">
+                            <i class="fa-solid fa-moon"></i>
+                            <div>
+                                <p>Sunset</p>
+                                <span>3:45 PM</span>
+                            </div>
+                        </div>
+                    </div> -->
+                </div>
+                <div class="hour-forcast">
+                    <!-- <div class="hour-item">
+                        <p>3 AM</p>
+                        <img src="images/01n.png" alt="">
+                        <p>4</p>
+                    </div>
+                    <div class="hour-item">
+                        <p>3 AM</p>
+                        <img src="images/01n.png" alt="">
+                        <p>4</p>
+                    </div>
+                    <div class="hour-item">
+                        <p>3 AM</p>
+                        <img src="images/01n.png" alt="">
+                        <p>4</p>
+                    </div>
+                    <div class="hour-item">
+                        <p>3 AM</p>
+                        <img src="images/01n.png" alt="">
+                        <p>4</p>
+                    </div>
+                    <div class="hour-item">
+                        <p>3 AM</p>
+                        <img src="images/01n.png" alt="">
+                        <p>4</p>
+                    </div>
+                    <div class="hour-item">
+                        <p>3 AM</p>
+                        <img src="images/01n.png" alt="">
+                        <p>4</p>
+                    </div>
+                    <div class="hour-item">
+                        <p>3 AM</p>
+                        <img src="images/01n.png" alt="">
+                        <p>4</p>
+                    </div>
+                    <div class="hour-item">
+                        <p>3 AM</p>
+                        <img src="images/01n.png" alt="">
+                        <p>4</p>
+                    </div> -->
+                </div>
+            </div>
+        </div>
+        
+</div><!-- /forcast section -->
+    
+
+    <script src="js/main.js"></script>
+</body>
+</html>
